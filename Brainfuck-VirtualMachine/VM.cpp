@@ -1,5 +1,4 @@
 #include "VM.h"
-#include <stdio.h>
 
 VM::VM()
 {
@@ -41,6 +40,17 @@ void VM::execute(char _char)
 		this->buffer[this->location_buffer] = getchar();
 		break;
 	default:
+		//Ignore all characters, that aren't part of the brainfuck language
 		break;
+	}
+}
+
+void VM::code (const std::string& code)
+{
+	const char* chars = code.c_str();
+
+	for (int i = 0; chars[i]; i++)
+	{
+		this->execute(chars[i]);
 	}
 }

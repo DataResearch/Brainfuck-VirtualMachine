@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+#include <stdio.h>
+
 class VM
 {
 private:
@@ -15,5 +18,6 @@ public:
 	~VM();
 
 	void execute(char _char);
+	void code(const std::string& code);
 
 };
