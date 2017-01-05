@@ -23,10 +23,10 @@ void VM::execute(char _char)
 		--this->location_buffer;
 		break;
 	case '+':
-		++(buffer[location_buffer]);
+		++(this->buffer[this->location_buffer]);
 		break; 
 	case '-':
-		--(buffer[location_buffer]);
+		--(this->buffer[this->location_buffer]);
 		break;
 	case '[':
 		//not implemented yet
