@@ -1,4 +1,5 @@
 #include "VM.h"
+#include <stdio.h>
 
 VM::VM()
 {
@@ -16,20 +17,28 @@ void VM::execute(char _char)
 	switch (_char)
 	{
 	case '>':
+		++this->location_buffer;
 		break;
 	case '<':
+		--this->location_buffer;
 		break;
 	case '+':
+		++(buffer[location_buffer]);
 		break; 
 	case '-':
+		--(buffer[location_buffer]);
 		break;
 	case '[':
+		//not implemented yet
 		break;
 	case ']':
+		//not implemented yet
 		break;
 	case '.':
+		putchar(this->buffer[this->location_buffer]);
 		break;
 	case ',':
+		this->buffer[this->location_buffer] = getchar();
 		break;
 	default:
 		break;
